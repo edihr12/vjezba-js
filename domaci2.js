@@ -107,6 +107,18 @@ switch (time) {
 // Zadatak 2.
 // Napisi program koji omogucava unos proizvoljnog broja godina preko konzole, te napisi ternarni izraz koji bira vrijednosti MALOLJETAN i PUNOLJETAN. Potom za MALOLJETAN ispisi "Korisnik je maloljentan", a za punoljetan "Korisnik je punoljetan". Ako korisnik nije unio broj napisi "Pogresan unos!".
 
+var godine = +process.argv[2];
+var punoljetnost = godine >= 18 ? 'PUNOLJETAN' : 'MALOLJETAN';
+if (!isNaN(godine)) {
+  if (punoljetnost == 'PUNOLJETAN') {
+    console.log('Korisnik je punoljentan');
+  } else if (punoljetnost == 'MALOLJETAN') {
+    console.log('Korisnik je maloljetan');
+  }
+} else {
+  console.log('Pogresan unos!');
+}
+
 // Zadatak 3.
 // Napisi program u kojem korisnik unosi broj preko konzole. Ako korisnik nije unio broj, program racuna da je korisnik unio broj 7. Program zatim ispisuje "Tvoj sretni broj je ___" i potom preko Math.random funkcije izvlaci cijeli broj od 0 do 9. Ukoliko je izvuceni broj identican korisnikovom sretnom broju ispisi "Jackpot!", a u suprotnom "Vise srece drugi put!".
 // Napomena: Ukoliko ne znate koristiti Math.random pokusajte guglati kako se koristi.
